@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simulador de Planificación</title>
+  <link rel="stylesheet" href="dis.css">
+</head>
+<body>
+
+  <h2>Simulador de Planificación de Procesos</h2>
+
+  <div>
+    <label>Tiempo de llegada (AT):</label>
+    <input type="number" id="at" />
+    <label>Tiempo de ráfaga (BT):</label>
+    <input type="number" id="bt" />
+    <button onclick="agregarProceso()">Agregar Proceso</button>
+    <button onclick="limpiarProcesos()">Limpiar Procesos</button>
+  </div>
+
+  <div>
+    <label>Algoritmo:</label>
+    <select id="algoritmo" onchange="mostrarQuantum()">
+      <option value="">Selecciona algoritmo</option>
+      <option value="FIFO">FIFO</option>
+      <option value="SJF">SJF</option>
+      <option value="RR">Round Robin</option>
+    </select>
+
+    <span id="campoQuantum">
+      Quantum: <input type="number" id="quantum" style="width: 50px;" />
+    </span>
+
+    <button onclick="simular()">Simular</button>
+  </div>
+
+  <div id="listaProcesos"></div>
+  <div id="resultado"></div>
+
+  <script src="prog.js"></script>
+</body>
+</html>
